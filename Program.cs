@@ -84,3 +84,79 @@ foreach (int evenSlot in evenSlots){
 }
 
 
+Console.WriteLine("Шаг 5");
+int[] grades2 = {4, 5, 3, 5, 4, 2};
+Array.Sort(grades2);
+
+foreach (int grade2 in grades2){
+    Console.WriteLine(grade2);
+}
+
+
+Console.WriteLine("Самостоятельное задание: А");
+Console.Write("Введите N: ");
+int n = int.Parse(Console.ReadLine());
+
+int[] squares = new int[n];
+
+for (int s = 0; s < n; s++){
+    squares[s] = (s + 1) * (s + 1); 
+}
+
+foreach (int sq in squares){
+    Console.WriteLine(sq);
+}
+
+
+
+Console.WriteLine("Самостоятельное задание: Б");
+int[] numbers = { 5, -3, 8, -1, 0, -7, 4 };
+
+for (int r = 0; r < numbers.Length; r++)
+{
+    if (numbers[r] < 0)
+    {
+        numbers[r] = 0;
+    }
+}
+
+foreach (int num in numbers){
+    Console.Write(num + " ");
+Console.WriteLine();
+}
+
+
+Console.Write("Введите свою фамилию: ");
+string surname = Console.ReadLine()!.Trim();
+if (string.IsNullOrEmpty(surname)) {
+Console.WriteLine("Фамилия не введена. Завершение работы.");
+return;
+}
+Random rnd = new(surname.GetHashCode() + DateTime.Now.DayOfYear);
+var assigned = Enumerable.Range(1, 10)
+.OrderBy(_ => rnd.Next())
+.Take(2)
+.OrderBy(x => x)
+.ToList();
+Console.WriteLine($"Задачи: №{assigned[0]} и №{assigned[1]}");
+
+
+Console.WriteLine("Вариант 1");
+Console.Write("Введите размер массива: ");
+int size = int.Parse(Console.ReadLine());
+int[] arr = new int[size];
+int sum1 = 0;
+
+for (int q = 0; q < size; q++){
+    Console.Write($"Элемент {q + 1}: ");
+    arr[q] = int.Parse(Console.ReadLine());
+    sum1 += arr[q];
+}
+Console.WriteLine($"Сумма: {sum1}");
+
+Console.WriteLine("Вариант 6");
+int[] arr1 = {7, 2, 9, 4, 5};
+Array.Sort(arr1);
+
+int median = arr1[arr1.Length / 2];
+Console.WriteLine($"Медиана: {median}");
